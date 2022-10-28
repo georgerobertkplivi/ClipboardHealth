@@ -4,7 +4,6 @@ import com.codeborne.selenide.ElementsCollection;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.$$;
 
 public class ResultsPage extends SideNavBar{
     final By resultsTitleSelector = By.xpath("//span[.='RESULTS']");
