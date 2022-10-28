@@ -31,13 +31,10 @@ public class ResultsPage extends SideNavBar{
         return this;
     }
 
-    // todo find the second Highest Item and Click it to go the Product Page
-
-    final By productSelector = By.xpath("//span[.='6,00,000']");
 
 
     public ProductPage getProduct(){
-        ElementsCollection listPrices = $$(By.className("a-price-whole"));
+        ElementsCollection listPrices = getWebElements(By.className("a-price-whole"));
         getWebElement(By.xpath("//span[.='" + listPrices.get(1).getText() + "']")).click();
         return new ProductPage();
     }

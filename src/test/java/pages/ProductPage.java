@@ -12,6 +12,7 @@ public class ProductPage extends PageObject{
                 .scrollTo()
                 .shouldBe(visible)
                 .shouldHave(text(" About this item "));
+        System.out.println(aboutText());
     }
 
     public String aboutText(){
