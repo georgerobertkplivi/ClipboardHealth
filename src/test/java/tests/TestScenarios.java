@@ -1,6 +1,7 @@
 package tests;
 
 import org.junit.Test;
+import org.junit.jupiter.api.DisplayName;
 import pages.ElectronicsPage;
 import pages.HomePage;
 import pages.ProductPage;
@@ -15,6 +16,7 @@ public class TestScenarios extends BaseTest {
     ProductPage productPage = new ProductPage();
 
     @Test
+    @DisplayName("Select The Second Highest Samsung Item From The Products Page")
     public void selectSecondHighestSamsungProductFromTheResultsPage(){
         homePage.gotoSamsungBrand();
         electronicsPage.clickSamsungBrand();
