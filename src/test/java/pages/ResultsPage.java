@@ -3,9 +3,8 @@ package pages;
 import com.codeborne.selenide.ElementsCollection;
 import org.openqa.selenium.By;
 
-import java.util.List;
-
 import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selenide.$$;
 
 public class ResultsPage extends SideNavBar{
     final By resultsTitleSelector = By.xpath("//span[.='RESULTS']");
@@ -37,12 +36,11 @@ public class ResultsPage extends SideNavBar{
     final By productSelector = By.xpath("//span[.='6,00,000']");
 
 
-    public ProductPage getProduct(String price){
-        getWebElement(By.xpath("//span[.='" + price + "']"));
+    public ProductPage getProduct(){
+        ElementsCollection listPrices = $$(By.className("a-price-whole"));
+        getWebElement(By.xpath("//span[.='" + listPrices.get(1).getText() + "']")).click();
         return new ProductPage();
     }
-
-    String results = getWebElements(By.className("a-price-whole")).texts().toString();
 
 
 
